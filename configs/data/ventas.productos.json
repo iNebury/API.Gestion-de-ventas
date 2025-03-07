@@ -1,0 +1,22 @@
+[{
+  "_id": {
+    "$oid": "67ca192e42a4805fca2430bd"
+  },
+  "nombre": "Switch",
+  "precio": 2500,
+  "stock": 70,
+  "vecesComprado": 5,
+  "status": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67ca3749a8159ba13a93d25c"
+  },
+  "nombre": "Pollo",
+  "precio": 30,
+  "stock": 25,
+  "vecesComprado": 30,
+  "status": true,
+  "__v": 0
+}]

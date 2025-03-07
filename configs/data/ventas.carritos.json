@@ -1,0 +1,34 @@
+[{
+  "_id": {
+    "$oid": "67ca324ea8159ba13a93d25a"
+  },
+  "usuario": {
+    "$oid": "67aea01fd731404f299dbc87"
+  },
+  "total": 2500,
+  "productos": [
+    "67ca192e42a4805fca2430bd"
+  ],
+  "status": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67ca37b1a8159ba13a93d266"
+  },
+  "usuario": {
+    "$oid": "67aea01fd731404f299dbc87"
+  },
+  "total": 2680,
+  "productos": [
+    "67ca192e42a4805fca2430bd",
+    "67ca3749a8159ba13a93d25c",
+    "67ca3749a8159ba13a93d25c",
+    "67ca3749a8159ba13a93d25c",
+    "67ca3749a8159ba13a93d25c",
+    "67ca3749a8159ba13a93d25c",
+    "67ca3749a8159ba13a93d25c"
+  ],
+  "status": true,
+  "__v": 0
+}]

@@ -94,3 +94,30 @@ export const updateUser = async (req, res) => {
         });
     }
 }
+
+export const getUserHistory = async (req, res) => {
+    try {
+        const { uid } = req.params;
+
+        const user = await User.findById(uid).select('historial');
+
+        if (!user) {
+            return res.status(404).json({
+                success: false,
+                message: 'Usuario no encontrado',
+            });
+        }
+
+        return res.status(200).json({
+            success: true,
+            historial: user.historial 
+        });
+    } catch (err) {
+        return res.status(500).json({
+            success: false,
+            message: "Error al obtener el historial del usuario",
+            error: err.message
+        });
+    }
+}
+

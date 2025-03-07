@@ -36,6 +36,11 @@ const usuarioSchema = new Schema({
         enum: ["admin", "cliente"],
         default: "cliente"
     },
+    historial:[{
+        type: Schema.Types.ObjectId,
+        ref: "Carrito",
+        default: []
+    }],
     status:{
         type: Boolean,
         default: true

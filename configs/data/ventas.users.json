@@ -1,0 +1,19 @@
+[{
+  "_id": {
+    "$oid": "67aea01fd731404f299dbc87"
+  },
+  "name": "Juan",
+  "surname": "Pérez",
+  "userName": "juanperez123",
+  "email": "oreo@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$VqcwDL9dm6mG/Gpq2TOF/Q$0l0+1WFiAPUkbiKVKyAhrXiWjzKtHunuCazacYOZ6SU",
+  "phone": "12345678",
+  "role": "cliente",
+  "status": false,
+  "__v": 0,
+  "historial": [
+    {
+      "$oid": "67ca37b1a8159ba13a93d266"
+    }
+  ]
+}]

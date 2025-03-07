@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "e5d0821b-8dbc-4ee1-9e85-ea7c5a1908b7",
+		"_postman_id": "b64ec6de-a00c-424c-ac9a-24324e031e4a",
 		"name": "gestor de ventas",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "42046593"
+		"_exporter_id": "37641996"
 	},
 	"item": [
 		{
@@ -140,6 +140,31 @@
 					"response": []
 				},
 				{
+					"name": "listar usuarios Copy",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3000/gestionDeVentas/v1/user/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"gestionDeVentas",
+								"v1",
+								"user",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "eliminar usuarios",
 					"request": {
 						"method": "PATCH",
@@ -206,6 +231,612 @@
 								{
 									"key": "uid",
 									"value": "67aea01fd731404f299dbc87"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "categoria",
+			"item": [
+				{
+					"name": "crear categoria",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nombre\": \"Electrónica\",\r\n  \"descripcion\": \"Categoría dedicada a productos electrónicos\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/gestionDeVentas/v1/categoria/crearCategoria/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"gestionDeVentas",
+								"v1",
+								"categoria",
+								"crearCategoria",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "agregar productos a categoria",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"productos\": [\"67ca3749a8159ba13a93d25c\"]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/gestionDeVentas/v1/categoria/agregarProducto/:uid",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"gestionDeVentas",
+								"v1",
+								"categoria",
+								"agregarProducto",
+								":uid"
+							],
+							"variable": [
+								{
+									"key": "uid",
+									"value": "67ca3760a8159ba13a93d25e"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "eliminar categoria",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/gestionDeVentas/v1/categoria/borrarCategoria/:uid",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"gestionDeVentas",
+								"v1",
+								"categoria",
+								"borrarCategoria",
+								":uid"
+							],
+							"variable": [
+								{
+									"key": "uid",
+									"value": "67ca17d34da7445d51f0bec0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "actualizar categoria",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nombre\": \"Electrónica\",\r\n  \"descripcion\": \"Perifericos para gaming\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/gestionDeVentas/v1/categoria/actualizarCategoria/:uid",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"gestionDeVentas",
+								"v1",
+								"categoria",
+								"actualizarCategoria",
+								":uid"
+							],
+							"variable": [
+								{
+									"key": "uid",
+									"value": "67ca17d34da7445d51f0bec0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "buscar categoria",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/gestionDeVentas/v1/categoria/buscarCategoria/:uid",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"gestionDeVentas",
+								"v1",
+								"categoria",
+								"buscarCategoria",
+								":uid"
+							],
+							"variable": [
+								{
+									"key": "uid",
+									"value": "67ca17d34da7445d51f0bec0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listar categoria",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/gestionDeVentas/v1/categoria/listarCategorias",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"gestionDeVentas",
+								"v1",
+								"categoria",
+								"listarCategorias"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "producto",
+			"item": [
+				{
+					"name": "crear producto",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nombre\": \"Pollo\",\r\n  \"precio\": 30,\r\n  \"stock\": 25\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/gestionDeVentas/v1/productos/crearProducto/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"gestionDeVentas",
+								"v1",
+								"productos",
+								"crearProducto",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listar producto",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/gestionDeVentas/v1/productos/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"gestionDeVentas",
+								"v1",
+								"productos",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "buscar producto",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/gestionDeVentas/v1/productos/buscarProducto/:uid",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"gestionDeVentas",
+								"v1",
+								"productos",
+								"buscarProducto",
+								":uid"
+							],
+							"variable": [
+								{
+									"key": "uid",
+									"value": "67ca192e42a4805fca2430bd"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "actualizar producto",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nombre\": \"Switch\",\r\n  \"precio\": 2500,\r\n  \"stock\": 70\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/gestionDeVentas/v1/productos/actualizarProducto/:uid",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"gestionDeVentas",
+								"v1",
+								"productos",
+								"actualizarProducto",
+								":uid"
+							],
+							"variable": [
+								{
+									"key": "uid",
+									"value": "67ca192e42a4805fca2430bd"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "borrar producto",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/gestionDeVentas/v1/productos/borrarProducto/:uid",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"gestionDeVentas",
+								"v1",
+								"productos",
+								"borrarProducto",
+								":uid"
+							],
+							"variable": [
+								{
+									"key": "uid",
+									"value": "67ca192e42a4805fca2430bd"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listar productos mas vendidos",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/gestionDeVentas/v1/productos/listarMasVendidos",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"gestionDeVentas",
+								"v1",
+								"productos",
+								"listarMasVendidos"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "carrito",
+			"item": [
+				{
+					"name": "Registrar Carrito",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"usuario\": \"67aea01fd731404f299dbc87\",\r\n    \"productos\": [\"67ca192e42a4805fca2430bd\",\"67ca3749a8159ba13a93d25c\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/gestionDeVentas/v1/carrito/crearCarrito/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"gestionDeVentas",
+								"v1",
+								"carrito",
+								"crearCarrito",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Carrito",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"agregarProducto\": [\"67ca3749a8159ba13a93d25c\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/gestionDeVentas/v1/carrito/agregarProducto/:uid",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"gestionDeVentas",
+								"v1",
+								"carrito",
+								"agregarProducto",
+								":uid"
+							],
+							"variable": [
+								{
+									"key": "uid",
+									"value": "67ca37b1a8159ba13a93d266"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Pagar Carrito",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/gestionDeVentas/v1/carrito/pagarCarrito/:uid",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"gestionDeVentas",
+								"v1",
+								"carrito",
+								"pagarCarrito",
+								":uid"
+							],
+							"variable": [
+								{
+									"key": "uid",
+									"value": "67ca37b1a8159ba13a93d266"
 								}
 							]
 						}

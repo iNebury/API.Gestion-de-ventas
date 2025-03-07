@@ -2,6 +2,7 @@ import { body, param  } from "express-validator";
 import { emailExists, usernameExists, userExists } from "../helpers/db-validators.js";
 import { validarCampos } from "./validate-fields.js";
 import { handleErrors } from "./handle-errors.js";
+import { validateJWT } from "./validate-jwt.js";
 
 export const registerValidator = [
     body("name").notEmpty().withMessage("El nombre es requerido"),
@@ -24,6 +25,7 @@ export const loginValidator = [
 
 
 export const deleteUserValidator = [
+    validateJWT,
     param("uid").isMongoId().withMessage("No es un ID válido de MongoDB"),
     param("uid").custom(userExists),
     validarCampos,
@@ -32,6 +34,7 @@ export const deleteUserValidator = [
 
 
 export const updateUserValidator = [
+    validateJWT,
     param("uid", "No es un ID válido").isMongoId(),
     param("uid").custom(userExists),
     validarCampos,

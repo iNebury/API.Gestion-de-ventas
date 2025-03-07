@@ -1,0 +1,66 @@
+[{
+  "_id": {
+    "$oid": "67cb036edbe4cbbed084b91e"
+  },
+  "nombre": "Default",
+  "descripcion": "Categoría predeterminada para productos",
+  "productos": [],
+  "status": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67ca17d34da7445d51f0bec0"
+  },
+  "nombre": "Electrónica",
+  "descripcion": "Perifericos para gaming",
+  "productos": [
+    {
+      "$oid": "67ca192e42a4805fca2430bd"
+    }
+  ],
+  "status": false,
+  "__v": 1
+},
+{
+  "_id": {
+    "$oid": "67ca1e714deeef92afc97e75"
+  },
+  "nombre": "Default",
+  "descripcion": "Categoría predeterminada para productos",
+  "productos": [
+    {
+      "$oid": "67ca192e42a4805fca2430bd"
+    }
+  ],
+  "status": true,
+  "__v": 2
+},
+{
+  "_id": {
+    "$oid": "67ca31e2618ce4dd414e4e3e"
+  },
+  "nombre": "a",
+  "descripcion": "a",
+  "productos": [
+    {
+      "$oid": "67ca192e42a4805fca2430bd"
+    }
+  ],
+  "status": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67ca3760a8159ba13a93d25e"
+  },
+  "nombre": "Carnes",
+  "descripcion": "Organicos y carne de animales",
+  "productos": [
+    {
+      "$oid": "67ca3749a8159ba13a93d25c"
+    }
+  ],
+  "status": true,
+  "__v": 0
+}]

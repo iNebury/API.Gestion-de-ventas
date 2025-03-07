@@ -7,6 +7,11 @@ import morgan from "morgan"
 import { dbConnection } from "./mongo.js"
 import authRoutes from "../src/auth/aut.routes.js"
 import userRoutes from "../src/usuario/usuario.routes.js"
+import categoriaRoutes from "../src/categoria/categoria.routes.js"
+import productosRoutes from "../src/producto/producto.routes.js"
+import carritoRoutes from "../src/carrito/carrito.routes.js"
+import { categoriaDefault } from "../src/categoria/categoria.controller.js"
+import { swaggerDocs, swaggerUi } from "./swagger.js";
 
 const middlewares = (app) => {
     app.use(express.urlencoded({extended: false}))
@@ -19,6 +24,10 @@ const middlewares = (app) => {
 const routes = (app) =>{
     app.use("/gestionDeVentas/v1/auth", authRoutes)
     app.use("/gestionDeVentas/v1/user", userRoutes)
+    app.use("/gestionDeVentas/v1/categoria", categoriaRoutes)
+    app.use("/gestionDeVentas/v1/productos", productosRoutes)
+    app.use("/gestionDeVentas/v1/carrito", carritoRoutes)
+    app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs))
 }
 
 const conectarDB = async () =>{
@@ -36,6 +45,7 @@ export const initServer = () => {
         middlewares(app)
         conectarDB()
         routes(app)
+        categoriaDefault()
         app.listen(process.env.PORT)
         console.log(`Server running on port ${process.env.PORT}`)
     }catch(err){
